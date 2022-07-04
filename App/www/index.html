@@ -20,6 +20,7 @@
     <script type="text/javascript" src="js/jquery.qrcode.min.js?v=xxx"></script>
     <script type="text/javascript" src="js/jquery.mask.min.js?v=xxx"></script>
     <script type="text/javascript" src="./buscar_geolocalizacao.js"></script>
+    <script type="text/javascript" src="./login.js"></script>
 
     <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAowmYdY3dZwoe4qI1I_X8Ry-UPepb5dpA"></script>-->
     <script type="text/javascript" src="cordova.js"></script>
@@ -119,13 +120,13 @@
             <p style="text-align:center;font-size:20px; "> Buscando geolocalização </p>
             <button class="botao_selecionar_manualmente" style="  border: none;padding: 20px 28px 20px 28px;color: white;background-color: #FF0000;font-size: 24px;border-radius: 8px;width: 80vw;display: block;position: absolute;left: 10vw;bottom: 4vh;"> Selecionar Manualmente </button>
         </div>
-        <div class="login hidden" style="overflow-y:hidden;">
+        <div id="Login" class="login" style="overflow-y:hidden;">
             <img src="./img/Logo.svg" class="imgLogin">
             
             <input type="email" placeholder="Email" id="inputEmail" style="width:291px; height:44px; display:block; margin: 20px auto 0 auto; border-radius:8px; border-color:#3A3AEB; padding: 0 10px 0 10px; border-width: 1px;"  />
             <input  type="password" placeholder=" Senha" id="inputSenha" style="width:291px; height:44px; display:block; margin: 8px auto 0 auto;  border-radius:8px; border-color:#3A3AEB; padding: 0 10px 0 10px;border-width: 1px;" />
             <a class="esqueceuASenha">Esqueceu a senha?</a>
-            <button class="loginEntrar" >Entrar</button>
+            <button id="btnLogin"class="loginEntrar" >Entrar</button>
             <a Class="seCadastrar">Se cadastrar</a>
 
             
@@ -141,7 +142,22 @@
             <button class="btnSeCadastrar" >Se cadastrar</button>
             <a Class="btnEntrar">Entrar</a>
         </div>
-        <div id="paginaPrincipal" class="" >
+        <div id="Principal" class="hidden" >
+            <div class="sideBar" style="position:absolute; width:222px; height:100vh; background-color:#2B2BC9; z-index:10;" >
+                <div class="usuario" style="height:62px; background-color:#2323C6; position:relative;"  >
+                    <p class="btnUsuario"><img src="./img/User.png" style="width:16%; height:auto;margin-right:8px;"/>Usuário</p>
+                </div>
+                <div class="sideBarPage">
+                    <p class="home"> <img src="./img/Icon-anúncios.png" style="width:12%; height:auto;margin-right:8px;"/>Home</p>
+
+                    <p class="inserirAnuncios"> <img src="./img/Icon-inserir@0.25x.png" style="width:12%; height:auto;margin-right:8px;"/>InserirAnúncios</p>
+
+                    <p class="meusAnuncios"> <img src="./img/Icon-meusAnúncios@0.25x.png" style="width:12%; height:auto;margin-right:8px;"/>Meus anúncios</p>
+
+                    <p class="chat"> <img src="./img/Icon-chat@0.25x.png" style="width:12%; height:auto;margin-right:8px;"/>Chat</p>      
+                </div>
+            </div>
+            
             <div class="topo">
                 <img src="./img/Sidebar.png" class="btnSideBar">
             </div>
@@ -152,7 +168,6 @@
                 <p class="anuncioBar"> | </p>
                 <p class="filtros">Filtros</p>
             </div>
-            <div class="sideBar hidden"></div>
             <div class="anuncios"></div>
         </div>
     </div> <!-- End App -->

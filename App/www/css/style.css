@@ -103,8 +103,8 @@
   background-color: #3a3aeb;
   width: 100vw;
   height: 42px;
+  align-items: center;
 }
-.regiao,
 .anuncioBar,
 .categoria,
 .anuncioBar,
@@ -114,7 +114,36 @@
   color: white;
   font-family: "Inter", sans-serif;
 }
+.regiao {
+  font-size: 20px;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
 
 .anuncioBar {
   color: #1a1abe;
+}
+
+.btnUsuario {
+  display: flex;
+  position: absolute;
+  color: white;
+  left: 35px;
+  font-size: 22px;
+  top: 18px;
+}
+
+.chat,
+.meusAnuncios,
+.inserirAnuncios,
+.home {
+  color: white;
+  font-size: 18px;
+  margin-left: 35px;
+  display: flex;
+  margin-top: 22px;
+}
+
+.home {
+  margin-top: 60px;
 }
