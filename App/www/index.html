@@ -13,11 +13,13 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <title>Aproximati</title>
     <link type="text/css" rel="stylesheet" href="css/integra.css" />
-    <!--<link type="text/css" rel="stylesheet" hreg="css/index.css"/>-->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" hreg="css/index.css"/>
 
     <script type="text/javascript" src="js/jquery-3.1.0.min.js?v=xxx"></script>
     <script type="text/javascript" src="js/jquery.qrcode.min.js?v=xxx"></script>
     <script type="text/javascript" src="js/jquery.mask.min.js?v=xxx"></script>
+    <script type="text/javascript" src="./buscar_geolocalizacao.js"></script>
 
     <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAowmYdY3dZwoe4qI1I_X8Ry-UPepb5dpA"></script>-->
     <script type="text/javascript" src="cordova.js"></script>
@@ -108,13 +110,50 @@
     </div>
 
 
-     <div id="app" style="display:none;">
+     <div id="app" style="display:none">
 
         <!--Construir as paginas aqui-->
-        <div id="geolocalização" class="page" style="background-color:white;" >
+        <div id="geolocalização" class="page" style="background-color:white
+        ;"  >
             <img src="./img/map.svg" style="width:75vw; height:auto; display:block; margin: 8vh auto 0.6vh auto; ">
             <p style="text-align:center;font-size:20px; "> Buscando geolocalização </p>
-            <button class="botao_selecionar_manualmente" style="border:none; padding:20px 28px 20px 28px; color:white; background-color:#F52B10;font-size:24px; border-radius:8px; width:80vw; display:block; position:absolute; left:10vw; bottom:4vh;"> Selecionar Manualmente </button>
+            <button class="botao_selecionar_manualmente" style="  border: none;padding: 20px 28px 20px 28px;color: white;background-color: #FF0000;font-size: 24px;border-radius: 8px;width: 80vw;display: block;position: absolute;left: 10vw;bottom: 4vh;"> Selecionar Manualmente </button>
+        </div>
+        <div class="login hidden" style="overflow-y:hidden;">
+            <img src="./img/Logo.svg" class="imgLogin">
+            
+            <input type="email" placeholder="Email" id="inputEmail" style="width:291px; height:44px; display:block; margin: 20px auto 0 auto; border-radius:8px; border-color:#3A3AEB; padding: 0 10px 0 10px; border-width: 1px;"  />
+            <input  type="password" placeholder=" Senha" id="inputSenha" style="width:291px; height:44px; display:block; margin: 8px auto 0 auto;  border-radius:8px; border-color:#3A3AEB; padding: 0 10px 0 10px;border-width: 1px;" />
+            <a class="esqueceuASenha">Esqueceu a senha?</a>
+            <button class="loginEntrar" >Entrar</button>
+            <a Class="seCadastrar">Se cadastrar</a>
+
+            
+            
+        </div>
+        <div class="cadastro hidden" sytle="overflow-y:hidden;">
+            <img src="./img/Cadastro.svg" class="imgCadastro">
+            <input placeholder="Nome" id="inputEmail" style="width:291px; height:44px; display:block; margin: 20px auto 0 auto; border-radius:8px; border-color:#3A3AEB; padding: 0 10px 0 10px; border-width: 1px;"  />
+            <input  type="email" placeholder="Email" id="inputSenha" style="width:291px; height:44px; display:block; margin: 8px auto 0 auto;  border-radius:8px; border-color:#3A3AEB; padding: 0 10px 0 10px;border-width: 1px;" />
+            <input  type="number" placeholder="Telefone" id="inputEmail" style="width:291px; height:44px; display:block; margin: 8px auto 0 auto; border-radius:8px; border-color:#3A3AEB; padding: 0 10px 0 10px; border-width: 1px;"  />
+            <input type="password" placeholder="Senha" id="inputSenha" style="width:291px; height:44px; display:block; margin: 8px auto 0 auto;  border-radius:8px; border-color:#3A3AEB; padding: 0 10px 0 10px;border-width: 1px;" />
+            <input   type="password" placeholder="Repetir senha" id="inputSenha" style="width:291px; height:44px; display:block; margin: 8px auto 0 auto;  border-radius:8px; border-color:#3A3AEB; padding: 0 10px 0 10px;border-width: 1px;" />
+            <button class="btnSeCadastrar" >Se cadastrar</button>
+            <a Class="btnEntrar">Entrar</a>
+        </div>
+        <div id="paginaPrincipal" class="" >
+            <div class="topo">
+                <img src="./img/Sidebar.png" class="btnSideBar">
+            </div>
+            <div class="filtrosBar">
+                <p class="regiao">Região</p>
+                <p class="anuncioBar"> | </p>
+                <p class="categoria">Categoria</p>
+                <p class="anuncioBar"> | </p>
+                <p class="filtros">Filtros</p>
+            </div>
+            <div class="sideBar hidden"></div>
+            <div class="anuncios"></div>
         </div>
     </div> <!-- End App -->
 

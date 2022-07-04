@@ -1,5 +1,5 @@
 function buscaOrdensNaAPI() {
-  msgGeolocDetect.style.visibility = "visible";
+  // msgGeolocDetect.style.visibility = "visible";
   navigator.geolocation.getCurrentPosition(
     onGeolocationSuccess,
     onGeolocationError,
@@ -11,4 +11,6 @@ function onGeolocationError() {
   alerta("ATENÇÃO !!!", "GPS desabilitado.", null);
 }
 
-function onGeolocationSuccess(position) {}
+function onGeolocationSuccess(position) {
+  console.log(position);
+}
