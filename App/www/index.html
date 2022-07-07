@@ -185,7 +185,11 @@
       <!-- Fim pagina de Geolocalização -->
 
       <!--  Ínicio Pagina de login -->
-      <div id="login" class="login" style="overflow-y: hidden; display: block">
+      <div
+        id="login"
+        class="login page"
+        style="overflow-y: hidden; display: none"
+      >
         <img src="./img/Logo.svg" class="imgLogin" />
 
         <input
@@ -202,20 +206,23 @@
           id="inputSenha"
           style=""
         />
-        <a class="esqueceuASenha" style="color: rgb(70, 70, 70)"
-          >Esqueceu a senha?</a
-        >
+        <a class="esqueceuASenha" style="color: rgb(70, 70, 70)">
+          Esqueceu a senha?
+        </a>
+
         <button onclick="ShowPrincipal()" id="btnLogin" class="loginEntrar">
           Entrar
         </button>
-        <a onclick="ShowCadastro()" class="seCadastrar">Se cadastrar</a>
+        <button onclick="ShowCadastro()" class="seCadastrar">
+          Se cadastrar
+        </button>
       </div>
       <!-- Fim Pagina de Login -->
 
       <!-- ínicio Pagina de cadastro -->
       <div
         id="pagecadastro"
-        class="cadastro"
+        class="cadastro page"
         style="overflow-y: hidden; display: none"
       >
         <img src="./img/Cadastro.svg" class="imgCadastro" />
@@ -245,13 +252,13 @@
           id="inputSenha"
         />
         <button class="btnSeCadastrar">Se cadastrar</button>
-        <a onclick="ShowLogin()" class="btnEntrar">Entrar</a>
+        <button onclick="ShowLogin()" class="btnEntrar">Entrar</button>
       </div>
       <!-- Fim pagina de cadastro -->
 
       <!-- Ínicio Paginas de anuncios -->
-      <div id="Principal" style="display: none">
-        <div id="side" class="sideBar" style="display: none">
+      <div id="principal" style="display: none" class="page">
+        <div id="sideBar" class="sideBar" style="display: none">
           <div class="btnUsuario">
             <p class="">
               <img src="./img/User.png" class="btnUsuarioImg" />Usuário
@@ -259,11 +266,11 @@
           </div>
 
           <div class="sideBarPage">
-            <p class="pgSideBarText home">
+            <p onclick="btnHome()" class="pgSideBarText home">
               <img src="./img/Icon-anúncios.png" class="pgSideBarImg" />Home
             </p>
 
-            <p class="pgSideBarText">
+            <p onclick="show_InserirAnuncio()" class="pgSideBarText">
               <img
                 src="./img/Icon-inserir@0.25x.png"
                 class="pgSideBarImg"
@@ -283,9 +290,13 @@
           </div>
         </div>
 
-        <div>
+        <div class="appBar">
           <div class="topo">
-            <img src="./img/Sidebar.png" class="btnSideBar" />
+            <img
+              onclick="show_SideBar()"
+              src="./img/Sidebar.png"
+              class="btnSideBar"
+            />
           </div>
 
           <div class="filtrosBar">
@@ -295,12 +306,44 @@
             <p class="anuncioBar">|</p>
             <p class="filtros">Filtros</p>
           </div>
+        </div>
+        <div onclick="close_SideBar()" class="anuncios" style=""></div>
+      </div>
+      <!-- Fim Pagina de anuncios -->
 
-          <div class="anuncios"></div>
+      <!-- Ínicio Pagina inserir anuncios -->
+      <div
+        id="inserirAnuncios"
+        class="inserirAnuncios page"
+        style="display: none"
+      >
+        <div class="pgInserirAnunciosAppBar">
+          <img class="pgInserirAnunciosSeta" src="./img/seta.svg" />
+          <p class="pgInserirAnunciosTitle">Inserir anúncio</p>
+        </div>
+        <div class="pgInserirAnunciosContainer">
+          <input class="pgInserirAnunciosImg" />
+          <div>
+            <p class="pgInserirAnunciosInputTitle">Título do anúncio</p>
+            <input class="pgInserirAnunciosInput_2" />
+          </div>
+          <div>
+            <p class="pgInserirAnunciosInputTitle">Descrição</p>
+            <input class="pgInserirAnunciosInput_2" />
+          </div>
+          <div>
+            <p class="pgInserirAnunciosInputTitle">Categoria</p>
+            <input class="pgInserirAnunciosInput_2" />
+          </div>
+          <div>
+            <p class="pgInserirAnunciosInputTitle">Cep</p>
+            <input class="pgInserirAnunciosInput_2" />
+          </div>
+
+          <button class="pgInserirAnunciosBtn">Publicar</button>
         </div>
       </div>
     </div>
-
     <!-- End App -->
   </body>
 
@@ -346,6 +389,10 @@
     }
 
     //INICIALIZAÇÃO DO APLICATIVO
+
+    function login_Show() {
+      trocaTela("login");
+    }
 
     function onDeviceReady() {
       document.addEventListener("backbutton", onBackKeyDown, false);
@@ -489,3 +536,6 @@
 <script type="text/javascript" src="./buscar_geolocalizacao.js"></script>
 <script type="text/javascript" src="./login.js"></script>
 <script type="text/javascript" src="./cadastro.js"></script>
+<script type="text/javascript" src="./principal.js"></script>
+<script type="text/javascript" src="./inserirAnuncios.js"></script>
+<script type="text/javascript" src="./js/integra.js"></script>

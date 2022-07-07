@@ -13,4 +13,5 @@ function onGeolocationError() {
 
 function onGeolocationSuccess(position) {
   console.log(position);
+  trocarTela("login");
 }

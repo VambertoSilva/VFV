@@ -32,7 +32,6 @@ var timerRotacao = null;
 var promptResult = "";
 
 function trocaTela(tela) {
-  console.log("funciona");
   document.getElementById(currView).style.display = "none";
   currView = tela;
   document.getElementById(currView).style.display = "block";

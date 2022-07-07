@@ -70,10 +70,14 @@
 }
 .seCadastrar {
   display: block;
-  margin-left: 148px;
-  margin-top: 20px;
-  font-size: 18px;
+  margin: 18px auto 0 auto;
+  width: 311px;
+  height: 46px;
   color: #ff0000;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #ff0000;
+  font-size: 20px;
 }
 
 /* Fim Pagina login */
@@ -100,7 +104,7 @@
 
 .btnSeCadastrar {
   display: block;
-  margin: 80px auto 0 auto;
+  margin: 60px auto 0 auto;
   width: 311px;
   height: 46px;
   color: white;
@@ -112,10 +116,14 @@
 
 .btnEntrar {
   display: block;
-  margin-left: 162px;
-  margin-top: 20px;
-  font-size: 18px;
+  margin: 18px auto 0 auto;
+  width: 311px;
+  height: 46px;
   color: #ff0000;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #ff0000;
+  font-size: 20px;
 }
 
 /* Ínicio Pagina de  Anúncios */
@@ -158,6 +166,9 @@
 
 /* Fim Sidebar */
 
+.appBar {
+  position: fixed;
+}
 .topo {
   width: 100vw;
   height: 62px;
@@ -230,4 +241,43 @@
   top: 0px;
   left: 0px;
   display: none;
+}
+
+.anuncios {
+  width: 100vw;
+  height: 1000px;
+}
+
+/* Fim Da pagina principal */
+
+/* Ínicio de Inserir anúncio */
+.pgInserirAnunciosAppBar {
+  width: 100vw;
+  height: 8vh;
+  border: none;
+  background-color: #1a1abe;
+  display: flex;
+  align-items: center;
+}
+
+.pgInserirAnunciosTitle {
+  color: white;
+  font-size: 20px;
+}
+
+/* .pgInserirAnunciosSeta { */
+.pgInserirAnunciosContainer {
+  margin: 80px auto;
+  width: 311px;
+}
+.pgInserirAnunciosImg,
+.pgInserirAnunciosInput_2 {
+  width: 291px;
+  height: 40px;
+  display: block;
+  margin: 0 auto 0 auto;
+  border-radius: 8px;
+  border-color: #3a3aeb;
+  padding: 0 10px 0 10px;
+  border-width: 1px;
 }

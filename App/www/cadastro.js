@@ -1,3 +1,3 @@
 function ShowLogin() {
-  trocaTela("Login");
+  trocaTela("login");
 }
