@@ -1,0 +1,3 @@
+function ShowLogin() {
+  trocaTela("login");
+}

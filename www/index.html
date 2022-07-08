@@ -1,0 +1,541 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *">-->
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"
+    />
+    <title>VFV</title>
+    <link type="text/css" rel="stylesheet" href="css/integra.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" hreg="css/index.css" />
+
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js?v=xxx"></script>
+    <script type="text/javascript" src="js/jquery.qrcode.min.js?v=xxx"></script>
+    <script type="text/javascript" src="js/jquery.mask.min.js?v=xxx"></script>
+
+    <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAowmYdY3dZwoe4qI1I_X8Ry-UPepb5dpA"></script>-->
+    <script type="text/javascript" src="cordova.js"></script>
+  </head>
+  <!--style="background-image: url(img/fundo_azul.png);"-->
+  <body id="telaPrincipal">
+    <div
+      id="toast"
+      class="toast-pos"
+      style="display: none; width: 100%; position: fixed; z-index: 2"
+    >
+      <table width="100%">
+        <tr>
+          <td align="center">
+            <table width="90%">
+              <tr>
+                <td align="center">
+                  <div class="toast">
+                    <p id="toastText" align="center"></p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <img
+      id="preloader"
+      class="preloader"
+      width="64"
+      height="64"
+      src="img/preloader.png"
+      style="display: none; position: fixed; z-index: 3"
+    />
+    <!--style="background-image:url(img/splashscreen.png);background-size:cover;"-->
+    <!--botao login-->
+
+    <div id="appBar" class="appbar" style="display: none">
+      <table width="100%">
+        <tr>
+          <td>
+            <div class="appbar-h"></div>
+          </td>
+
+          <td width="100%" align="center">
+            <table width="100%">
+              <tr>
+                <td id="appBarLeftButtonSpace" width="10%">
+                  <button
+                    id="appBarLeftButton"
+                    class="appbar-button"
+                    onclick="onBackKeyDown();"
+                  >
+                    <img
+                      id="appBarLeftButtonImage"
+                      src="img/botao_voltar.png"
+                      width="28"
+                      height="28"
+                      style="display: block"
+                    />
+                  </button>
+                </td>
+                <td id="appBarTitleSpace" align="left">
+                  <p id="appBarTitleText" class="fontepainel">FAÇA SEU LOGIN</p>
+                </td>
+                <td id="appBarRightButtonSpace" align="right">
+                  <table>
+                    <tr>
+                      <td id="appBarButton1Space">
+                        <button id="appBarButton1" class="appbar-button">
+                          <img
+                            id="imgAppBarButton1"
+                            src="img/technics.png"
+                            class="appbar-icone"
+                            style="display: block"
+                          />
+                        </button>
+                      </td>
+                      <td id="appBarButton2Space">
+                        <button id="appBarButton2" class="appbar-button">
+                          <img
+                            id="imgAppBarButton2"
+                            src="img/camera_branca.png"
+                            class="appbar-icone"
+                            style="display: block"
+                          />
+                        </button>
+                      </td>
+                      <td id="appBarButton3Space">
+                        <button id="appBarButton3" class="appbar-button">
+                          <img
+                            id="imgAppBarButton3"
+                            src="img/magnifier.png"
+                            class="appbar-icone"
+                            style="display: block"
+                          />
+                        </button>
+                      </td>
+                      <td id="appBarButton4Space">
+                        <button id="appBarButton4" class="appbar-button">
+                          <img
+                            id="imgAppBarButton4"
+                            src="img/vertical-squares.png"
+                            class="appbar-icone"
+                            style="display: block"
+                          />
+                        </button>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="searchBar" class="searchbar" style="display: none">
+      <table width="100%">
+        <tr>
+          <td>
+            <div class="searchbar-h"></div>
+          </td>
+          <td>
+            <img
+              src="img/left-arrow-azul.png"
+              onclick="hideSearchBar();"
+              width="24px"
+              height="24px"
+            />
+          </td>
+          <td>
+            <input
+              id="searchBarTxt"
+              class="input"
+              type="text"
+              style="width: 200px"
+              placeholder="Pesquisar"
+            />
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="app" style="display: none">
+      <!--Construir as paginas aqui-->
+
+      <!--  Ínicio Pagina de Geolocalização -->
+      <div id="geolocalização" class="page" style="background-color: white">
+        <img class="pgGeolocalizacaoImg" src="./img/map.svg" style="" />
+        <p class="pgGeolocalizacao_Buscando" style="">
+          Buscando geolocalização
+        </p>
+        <button class="pgBtnSelecionarManualmente" style="">
+          Selecionar Manualmente
+        </button>
+      </div>
+      <!-- Fim pagina de Geolocalização -->
+
+      <!--  Ínicio Pagina de login -->
+      <div
+        id="login"
+        class="login page"
+        style="overflow-y: hidden; display: none"
+      >
+        <img src="./img/Logo.svg" class="imgLogin" />
+
+        <input
+          class="pgLoginEmail"
+          type="email"
+          placeholder="Email"
+          id="inputEmail"
+          style=""
+        />
+        <input
+          class="pgLoginSenha"
+          type="password"
+          placeholder=" Senha"
+          id="inputSenha"
+          style=""
+        />
+        <a class="esqueceuASenha" style="color: rgb(70, 70, 70)">
+          Esqueceu a senha?
+        </a>
+
+        <button onclick="ShowPrincipal()" id="btnLogin" class="loginEntrar">
+          Entrar
+        </button>
+        <button onclick="ShowCadastro()" class="seCadastrar">
+          Se cadastrar
+        </button>
+      </div>
+      <!-- Fim Pagina de Login -->
+
+      <!-- ínicio Pagina de cadastro -->
+      <div
+        id="pagecadastro"
+        class="cadastro page"
+        style="overflow-y: hidden; display: none"
+      >
+        <img src="./img/Cadastro.svg" class="imgCadastro" />
+        <input class="pgCadastroInputs" placeholder="Nome" id="inputEmail" />
+        <input
+          class="pgCadastroInputs"
+          type="email"
+          placeholder="Email"
+          id="inputSenha"
+        />
+        <input
+          class="pgCadastroInputs"
+          type="number"
+          placeholder="Telefone"
+          id="inputEmail"
+        />
+        <input
+          class="pgCadastroInputs"
+          type="password"
+          placeholder="Senha"
+          id="inputSenha"
+        />
+        <input
+          class="pgCadastroInputs"
+          type="password"
+          placeholder="Repetir senha"
+          id="inputSenha"
+        />
+        <button class="btnSeCadastrar">Se cadastrar</button>
+        <button onclick="ShowLogin()" class="btnEntrar">Entrar</button>
+      </div>
+      <!-- Fim pagina de cadastro -->
+
+      <!-- Ínicio Paginas de anuncios -->
+      <div id="principal" style="display: none" class="page">
+        <div id="sideBar" class="sideBar" style="display: none">
+          <div class="btnUsuario">
+            <p class="">
+              <img src="./img/User.png" class="btnUsuarioImg" />Usuário
+            </p>
+          </div>
+
+          <div class="sideBarPage">
+            <p onclick="btnHome()" class="pgSideBarText home">
+              <img src="./img/Icon-anúncios.png" class="pgSideBarImg" />Home
+            </p>
+
+            <p onclick="show_InserirAnuncio()" class="pgSideBarText">
+              <img
+                src="./img/Icon-inserir@0.25x.png"
+                class="pgSideBarImg"
+              />InserirAnúncios
+            </p>
+
+            <p class="pgSideBarText">
+              <img
+                src="./img/Icon-meusAnúncios@0.25x.png"
+                class="pgSideBarImg"
+              />Meus anúncios
+            </p>
+
+            <p class="pgSideBarText">
+              <img src="./img/Icon-chat@0.25x.png" class="pgSideBarImg" />Chat
+            </p>
+          </div>
+        </div>
+
+        <div class="appBar">
+          <div class="topo">
+            <img
+              onclick="show_SideBar()"
+              src="./img/Sidebar.png"
+              class="btnSideBar"
+            />
+          </div>
+
+          <div class="filtrosBar">
+            <p class="regiao">Região</p>
+            <p class="anuncioBar">|</p>
+            <p class="categoria">Categoria</p>
+            <p class="anuncioBar">|</p>
+            <p class="filtros">Filtros</p>
+          </div>
+        </div>
+        <div onclick="close_SideBar()" class="anuncios" style=""></div>
+      </div>
+      <!-- Fim Pagina de anuncios -->
+
+      <!-- Ínicio Pagina inserir anuncios -->
+      <div
+        id="inserirAnuncios"
+        class="inserirAnuncios page"
+        style="display: none"
+      >
+        <div class="pgInserirAnunciosAppBar">
+          <img class="pgInserirAnunciosSeta" src="./img/seta.svg" />
+          <p class="pgInserirAnunciosTitle">Inserir anúncio</p>
+        </div>
+        <div class="pgInserirAnunciosContainer">
+          <input class="pgInserirAnunciosImg" />
+          <div>
+            <p class="pgInserirAnunciosInputTitle">Título do anúncio</p>
+            <input class="pgInserirAnunciosInput_2" />
+          </div>
+          <div>
+            <p class="pgInserirAnunciosInputTitle">Descrição</p>
+            <input class="pgInserirAnunciosInput_2" />
+          </div>
+          <div>
+            <p class="pgInserirAnunciosInputTitle">Categoria</p>
+            <input class="pgInserirAnunciosInput_2" />
+          </div>
+          <div>
+            <p class="pgInserirAnunciosInputTitle">Cep</p>
+            <input class="pgInserirAnunciosInput_2" />
+          </div>
+
+          <button class="pgInserirAnunciosBtn">Publicar</button>
+        </div>
+      </div>
+    </div>
+    <!-- End App -->
+  </body>
+
+  <script type="text/javascript" src="variaveis_globais.js"></script>
+
+  <script type="text/javascript">
+    //FUNCOES DOS BOTOES DO CELULAR
+    var executionType = "prod";
+
+    function onBackKeyDown() {
+      if (mdDone) {
+        mdDone = false;
+        menuDeslizanteClose();
+        return;
+      }
+
+      if (!modalOn) {
+      }
+    }
+
+    function onMenuKeyDown() {
+      /*
+        if (currView == "menu_principal") {
+            rota('info');
+        } else return false;
+        */
+      if (!mdDone) {
+        //mdCurrView = currView;
+        //menuDeslizanteOpen();
+      }
+    }
+
+    function onResume(event) {
+      document.getElementById(currView).style.display = "block";
+    }
+
+    function onOffline() {
+      temRede = false;
+    }
+
+    function onOnline() {
+      temRede = true;
+    }
+
+    //INICIALIZAÇÃO DO APLICATIVO
+
+    function login_Show() {
+      trocaTela("login");
+    }
+
+    function onDeviceReady() {
+      document.addEventListener("backbutton", onBackKeyDown, false);
+      document.addEventListener("menubutton", onMenuKeyDown, false);
+      document.addEventListener("resume", onResume, false);
+      document.addEventListener("offline", onOffline, false);
+      document.addEventListener("online", onOnline, false);
+
+      gLarguraTela = window.innerWidth;
+      gAlturaTela = window.innerHeight;
+
+      divs = document.getElementsByTagName("div"); // pega todos os divs
+      tbls = document.getElementsByTagName("table"); // pega todos os divs
+
+      ajustaPages();
+      ajustaListViews();
+      ajustaContainers();
+      ajustaPopups();
+      ajustaCards();
+      ajustaTelaPrincipal();
+      ajustaAppBar();
+
+      currView = "login";
+      navigator.splashscreen.hide();
+      app.style.display = "block";
+
+      modalOn = false;
+
+      //setInterval(hourCounterFuntion,60000)
+
+      login_Show();
+    }
+
+    window.onresize = function () {
+      gLarguraTela = window.innerWidth;
+      gAlturaTela = window.innerHeight;
+
+      divs = document.getElementsByTagName("div"); // pega todos os divs
+      tbls = document.getElementsByTagName("table"); // pega todos os divs
+
+      ajustaPages();
+      ajustaListViews();
+      ajustaContainers();
+      ajustaPopups();
+      ajustaCards();
+      ajustaTelaPrincipal();
+      ajustaAppBar();
+    };
+
+    window.onload = function () {
+      document.addEventListener("deviceready", onDeviceReady, false);
+    };
+
+    function ajustaAppBar() {
+      //var divs = document.getElementsByTagName("div"); // pega todos os divs
+      for (var i = 0; i <= divs.length - 1; i++) {
+        if (divs[i].className == "appbar") {
+          // se tem uma class especifica (no seu caso centralizar), muda a propriedade width.
+          var d = document.getElementById(divs[i].id);
+          d.style.width = gLarguraTela + "px";
+          //d.style.height = (window.innerHeight-53) + "px";
+        }
+      }
+    }
+
+    function ajustaPopups() {
+      //var divs = document.getElementsByTagName("div"); // pega todos os divs
+      for (var i = 0; i <= divs.length - 1; i++) {
+        if (divs[i].className == "popup") {
+          // se tem uma class especifica (no seu caso centralizar), muda a propriedade width.
+          var d = document.getElementById(divs[i].id);
+          d.style.left = (gLarguraTela - 320) / 2 + "px";
+          //d.style.height = (window.innerHeight-53) + "px";
+        }
+      }
+    }
+
+    function ajustaCards() {
+      //var divs = document.getElementsByTagName("div"); // pega todos os divs
+      for (var i = 0; i <= divs.length - 1; i++) {
+        if (divs[i].className == "listcard") {
+          // se tem uma class especifica (no seu caso centralizar), muda a propriedade width.
+          //var d = document.getElementById(divs[i].id);
+          tamanhoCard = gLarguraTela * 0.8;
+          divs[i].style.left = (gLarguraTela - tamanhoCard) / 2 + "px";
+          //d.style.height = (window.innerHeight-53) + "px";
+        }
+      }
+    }
+
+    function ajustaTelaPrincipal() {
+      telaPrincipal.style.width = gLarguraTela + "px";
+      telaPrincipal.style.height = gAlturaTela + "px";
+    }
+
+    function ajustaPages() {
+      //var divs = document.getElementsByTagName("div"); // pega todos os divs
+      for (var i = 0; i <= divs.length - 1; i++) {
+        if (divs[i].className == "page") {
+          // se tem uma class especifica (no seu caso centralizar), muda a propriedade width.
+          var d = document.getElementById(divs[i].id);
+          d.style.width = gLarguraTela + "px";
+          d.style.height = gAlturaTela + "px";
+        }
+      }
+    }
+
+    function ajustaListViews() {
+      //var tbls = document.getElementsByTagName("table"); // pega todos os divs
+      for (var i = 0; i <= tbls.length - 1; i++) {
+        if (tbls[i].className == "listview") {
+          // se tem uma class especifica (no seu caso centralizar), muda a propriedade width.
+          var d = document.getElementById(tbls[i].id);
+          d.style.width = gLarguraTela + "px";
+        }
+      }
+    }
+
+    function ajustaContainers() {
+      //var tbls = document.getElementsByTagName("table"); // pega todos os divs
+      for (var i = 0; i <= tbls.length - 1; i++) {
+        if (tbls[i].className == "container") {
+          // se tem uma class especifica (no seu caso centralizar), muda a propriedade width.
+          var d = document.getElementById(tbls[i].id);
+          d.style.width = gLarguraTela + "px";
+        }
+      }
+    }
+
+    if (executionType == "teste") {
+      loginUsuario.value = "14440";
+      loginSenha.value = "Mcbgama02";
+    } else {
+      loginUsuario.value = "";
+      loginSenha.value = "";
+    }
+  </script>
+</html>
+
+<!--Adicionar aqui os scripts das páginas -->
+<script type="text/javascript" src="./buscar_geolocalizacao.js"></script>
+<script type="text/javascript" src="./login.js"></script>
+<script type="text/javascript" src="./cadastro.js"></script>
+<script type="text/javascript" src="./principal.js"></script>
+<script type="text/javascript" src="./inserirAnuncios.js"></script>
+<script type="text/javascript" src="./js/integra.js"></script>

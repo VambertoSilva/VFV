@@ -265,6 +265,10 @@
   font-size: 20px;
 }
 
+.pgInserirAnunciosSeta {
+  margin-left: 6vw;
+}
+
 /* .pgInserirAnunciosSeta { */
 .pgInserirAnunciosContainer {
   margin: 80px auto;
