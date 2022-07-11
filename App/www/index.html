@@ -225,7 +225,7 @@
         class="cadastro page"
         style="overflow-y: hidden; display: none"
       >
-        <img src="./img/Cadastro.svg" class="imgCadastro" />
+        <img src="./img/Logo.svg" class="imgCadastro" />
         <input class="pgCadastroInputs" placeholder="Nome" id="inputEmail" />
         <input
           class="pgCadastroInputs"
@@ -318,7 +318,11 @@
         style="display: none"
       >
         <div class="pgInserirAnunciosAppBar">
-          <img class="pgInserirAnunciosSeta" src="./img/seta.svg" />
+          <img
+            onclick="ShowPrincipal()"
+            class="pgInserirAnunciosSeta"
+            src="./img/seta.svg"
+          />
           <p class="pgInserirAnunciosTitle">Inserir anúncio</p>
         </div>
         <div class="pgInserirAnunciosContainer">
@@ -336,8 +340,8 @@
             <input class="pgInserirAnunciosInput_2" />
           </div>
           <div>
-            <p class="pgInserirAnunciosInputTitle">Cep</p>
-            <input class="pgInserirAnunciosInput_2" />
+            <p class="pgInserirAnunciosInputTitle CEP">CEP</p>
+            <input type="number" class="pgInserirAnunciosInput_2" />
           </div>
 
           <button class="pgInserirAnunciosBtn">Publicar</button>

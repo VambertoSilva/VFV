@@ -87,7 +87,7 @@
 .imgCadastro {
   display: block;
   margin: 8vh auto 0 auto;
-  width: 40%;
+  width: 54%;
   height: auto;
 }
 
@@ -150,6 +150,7 @@
   left: 35px;
   font-size: 22px;
   top: 18px;
+  height: 62px;
 }
 
 .btnUsuarioImg {
@@ -258,6 +259,8 @@
   background-color: #1a1abe;
   display: flex;
   align-items: center;
+  justify-content: center;
+  position: fixed;
 }
 
 .pgInserirAnunciosTitle {
@@ -267,14 +270,28 @@
 
 .pgInserirAnunciosSeta {
   margin-left: 6vw;
+  position: absolute;
+  left: 1.5vw;
 }
 
-/* .pgInserirAnunciosSeta { */
 .pgInserirAnunciosContainer {
-  margin: 80px auto;
+  margin: 15vh auto 0 auto;
   width: 311px;
 }
-.pgInserirAnunciosImg,
+.pgInserirAnunciosImg {
+  width: 291px;
+  height: 154px;
+  display: block;
+  margin: 0 auto 0 auto;
+  border: 1px dashed #3a3aeb;
+  border-radius: 8px;
+  padding: 0 10px 0 10px;
+  border-width: 1px;
+}
+
+.pgInserirAnunciosInputTitle {
+  margin-top: 2.9vh;
+}
 .pgInserirAnunciosInput_2 {
   width: 291px;
   height: 40px;
@@ -284,4 +301,21 @@
   border-color: #3a3aeb;
   padding: 0 10px 0 10px;
   border-width: 1px;
+}
+.CEP {
+  width: 173px;
+}
+
+.pgInserirAnunciosBtn {
+  width: 311px;
+  height: 42px;
+  display: block;
+  margin: 0 auto 0 auto;
+  border-radius: 8px;
+  padding: 0 10px 0 10px;
+  border: none;
+  background-color: #ff0000;
+  color: white;
+  font-size: 22px;
+  margin-top: 8vh;
 }

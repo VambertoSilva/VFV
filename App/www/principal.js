@@ -1,8 +1,6 @@
 let mdstatus = false;
 const sidebar = document.getElementById("sideBar");
 
-console.log(sidebar);
-
 function close_SideBar() {
   if (mdstatus) {
     sidebar.style.display = "none";
@@ -19,4 +17,8 @@ function show_SideBar() {
 function btnHome() {
   close_SideBar();
   trocaTela("principal");
+}
+
+function show_InserirAnuncio() {
+  trocaTela("inserirAnuncios");
 }
