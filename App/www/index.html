@@ -277,7 +277,7 @@
               />InserirAnúncios
             </p>
 
-            <p class="pgSideBarText">
+            <p onclick="show_MeusAnuncios()" class="pgSideBarText">
               <img
                 src="./img/Icon-meusAnúncios@0.25x.png"
                 class="pgSideBarImg"
@@ -346,6 +346,19 @@
 
           <button class="pgInserirAnunciosBtn">Publicar</button>
         </div>
+      </div>
+    </div>
+    <!-- Fim pagina inserir anuncios -->
+
+    <!-- ínicio pagina Meus Anuncios -->
+    <div id="pgMeusAnuncios" class="pgMeusAnuncios page" style="display: none">
+      <div class="pgInserirAnunciosAppBar">
+        <img
+          onclick="ShowPrincipal()"
+          class="pgInserirAnunciosSeta"
+          src="./img/seta.svg"
+        />
+        <p class="pgInserirAnunciosTitle">Meus Anuncios</p>
       </div>
     </div>
     <!-- End App -->

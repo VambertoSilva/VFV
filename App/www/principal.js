@@ -22,3 +22,7 @@ function btnHome() {
 function show_InserirAnuncio() {
   trocaTela("inserirAnuncios");
 }
+
+function show_MeusAnuncios() {
+  trocaTela("pgMeusAnuncios");
+}
