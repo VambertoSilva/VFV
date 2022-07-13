@@ -307,7 +307,41 @@
             <p class="filtros">Filtros</p>
           </div>
         </div>
-        <div onclick="close_SideBar()" class="anuncios" style=""></div>
+        <div onclick="close_SideBar()" class="anuncios" style="">
+          <!-- card de anuncio -->
+          <div class="cardAnuncio">
+            <img class="cardImg" src="./img/cadeira.png" />
+            <div class="cardTexto">
+              <p id="cardTitle" class="cardTitle">Cadeira de escritório</p>
+              <p id="cardPreco" class="cardPreco">R$ 120,00</p>
+              <p id="cardDetalhes" class="cardDetalhes">
+                10 de janeiro, São Paulo
+              </p>
+            </div>
+          </div>
+
+          <div class="cardAnuncio">
+            <img class="cardImg" src="./img/moto.png" />
+            <div class="cardTexto">
+              <p id="cardTitle" class="cardTitle">Twister 250, 2019</p>
+              <p id="cardPreco" class="cardPreco">R$ 18000,00</p>
+              <p id="cardDetalhes" class="cardDetalhes">
+                12 de janeiro, São Paulo
+              </p>
+            </div>
+          </div>
+
+          <div class="cardAnuncio">
+            <img class="cardImg" src="./img/pulseira.png" />
+            <div class="cardTexto">
+              <p id="cardTitle" class="cardTitle">Pulseiras coloridas</p>
+              <p id="cardPreco" class="cardPreco">R$ 5,00</p>
+              <p id="cardDetalhes" class="cardDetalhes">
+                15 de janeiro, São Paulo
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       <!-- Fim Pagina de anuncios -->
 
@@ -347,20 +381,59 @@
           <button class="pgInserirAnunciosBtn">Publicar</button>
         </div>
       </div>
-    </div>
-    <!-- Fim pagina inserir anuncios -->
+      <!-- Fim pagina inserir anuncios -->
+      <!-- ínicio pagina Meus anuncios -->
+      <div
+        id="pgMeusAnuncios"
+        class="pgMeusAnuncios page"
+        style="display: none"
+      >
+        <div class="pgInserirAnunciosAppBar">
+          <img
+            onclick="ShowPrincipal()"
+            class="pgInserirAnunciosSeta"
+            src="./img/seta.svg"
+          />
+          <p class="pgInserirAnunciosTitle">Meus Anuncios</p>
+        </div>
+        <div class="cardMeusAnuncios" style="">
+          <!-- card de anuncio -->
+          <div class="cardAnuncio">
+            <img class="cardImg" src="./img/cadeira.png" />
+            <div class="cardTexto">
+              <p id="cardTitle" class="cardTitle">Cadeira de escritório</p>
+              <p id="cardPreco" class="cardPreco">R$ 120,00</p>
+              <p id="cardDetalhes" class="cardDetalhes">
+                10 de janeiro, São Paulo
+              </p>
+            </div>
+          </div>
 
-    <!-- ínicio pagina Meus anuncios -->
-    <div id="pgMeusAnuncios" class="pgMeusAnuncios page" style="display: none">
-      <div class="pgInserirAnunciosAppBar">
-        <img
-          onclick="ShowPrincipal()"
-          class="pgInserirAnunciosSeta"
-          src="./img/seta.svg"
-        />
-        <p class="pgInserirAnunciosTitle">Meus Anuncios</p>
+          <div class="cardAnuncio">
+            <img class="cardImg" src="./img/moto.png" />
+            <div class="cardTexto">
+              <p id="cardTitle" class="cardTitle">Twister 250, 2019</p>
+              <p id="cardPreco" class="cardPreco">R$ 18000,00</p>
+              <p id="cardDetalhes" class="cardDetalhes">
+                12 de janeiro, São Paulo
+              </p>
+            </div>
+          </div>
+
+          <div class="cardAnuncio">
+            <img class="cardImg" src="./img/pulseira.png" />
+            <div class="cardTexto">
+              <p id="cardTitle" class="cardTitle">Pulseiras coloridas</p>
+              <p id="cardPreco" class="cardPreco">R$ 5,00</p>
+              <p id="cardDetalhes" class="cardDetalhes">
+                15 de janeiro, São Paulo
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
     <!-- End App -->
   </body>
 
