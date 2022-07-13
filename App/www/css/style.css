@@ -184,10 +184,12 @@
 .filtrosBar {
   display: flex;
   justify-content: center;
-  background-color: #3a3aeb;
+  background-color: #f8f8f8;
   width: 100vw;
   height: 42px;
   align-items: center;
+  border-bottom: 1px solid #a3a3a3;
+  box-shadow: 0px 5px 5px 0px #dfdfdf77;
 }
 .anuncioBar,
 .categoria,
@@ -195,12 +197,12 @@
 .filtros {
   margin-left: 20px;
   font-size: 20px;
-  color: white;
+  color: #1a1abe;
   font-family: "Inter", sans-serif;
 }
 .regiao {
   font-size: 20px;
-  color: white;
+  color: #1a1abe;
   font-family: "Inter", sans-serif;
 }
 
@@ -238,7 +240,7 @@
 /* Card dos Anuncios tela */
 .cardAnuncio {
   height: 95px;
-  width: 330px;
+  width: 98vw;
   border: 0.6px solid #d3d3d3;
   display: flex;
   margin: 9px auto 0 auto;
