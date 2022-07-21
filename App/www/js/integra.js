@@ -92,6 +92,17 @@ function confirma(mens, titulo, funcao, botoes) {
   navigator.notification.confirm(mens, funcao, titulo, botoes);
 }
 
+// function trocarTela() {
+//   let sexlpld = 0;
+
+//   hjkl = setInterval(() => {
+//     document.getElementById("geolocalizacao").style.display = "none";
+//     currView = "login";
+//     document.getElementById("login").style.display = "block";
+//     sexlpld++;
+//     clearInterval(hjkl);
+//   }, 1000);
+
 function promptInput(titulo, mens, funcao) {
   gPromptInput = 0;
   if (navigator.userAgent.indexOf("Linux") == -1) {

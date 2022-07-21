@@ -208,6 +208,7 @@
     <preference name="ShowSplashScreen" value="true" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="FadeSplashScreen" value="true" />
+    <preference name="cryptoPort" value="8080" />
     <platform name="android">
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
             <application android:usesCleartextTraffic="true" />
@@ -241,4 +242,5 @@
     <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
         <string>Para ler o QrCode</string>
     </edit-config>
+    
 </widget>

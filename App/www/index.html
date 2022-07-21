@@ -173,12 +173,21 @@
       <!--Construir as paginas aqui-->
 
       <!--  Ínicio Pagina de Geolocalização -->
-      <div id="geolocalização" class="page" style="background-color: white">
+      <div
+        id="geolocalizacao"
+        onloadstart="buscaOrdensNaAPI();"
+        class="page"
+        style="background-color: white; display: none"
+      >
         <img class="pgGeolocalizacaoImg" src="./img/map.svg" style="" />
         <p class="pgGeolocalizacao_Buscando" style="">
           Buscando geolocalização
         </p>
-        <button class="pgBtnSelecionarManualmente" style="">
+        <button
+          onclick="buscaOrdensNaAPI()"
+          class="pgBtnSelecionarManualmente"
+          style=""
+        >
           Selecionar Manualmente
         </button>
       </div>
@@ -255,95 +264,41 @@
         <button onclick="ShowLogin()" class="btnEntrar">Entrar</button>
       </div>
       <!-- Fim pagina de cadastro -->
-
-      <!-- Ínicio Paginas de anuncios -->
-      <div id="principal" style="display: none" class="page">
-        <div id="sideBar" class="sideBar" style="display: none">
-          <div class="btnUsuario">
-            <p class="">
-              <img src="./img/User.png" class="btnUsuarioImg" />Usuário
-            </p>
+      <!-- Ínicio principal -->
+      <div id="pgPrincipal" class="pgPrincipal page" style="display: none">
+        <div class="pgPrincipalContainer">
+          <div class="pgPrincipalCardAnuncio">
+            <img id="videoAnuncio" src="./img/teste.png" class="videoAnuncio" />
+            <div id="descricao" class="descricao">
+              <p id="title" class="title">Fone de ouvido</p>
+              <p id="subtitle" class="subtitle">Estero, com fio de 1m</p>
+              <p id="preco" class="preco">R$ 16,00</p>
+            </div>
+            <img src="./img/whatsapp.png" class="imgWhatsapp" />
           </div>
-
-          <div class="sideBarPage">
-            <p onclick="btnHome()" class="pgSideBarText home">
-              <img src="./img/Icon-anúncios.png" class="pgSideBarImg" />Home
-            </p>
-
-            <p onclick="show_InserirAnuncio()" class="pgSideBarText">
-              <img
-                src="./img/Icon-inserir@0.25x.png"
-                class="pgSideBarImg"
-              />InserirAnúncios
-            </p>
-
-            <p onclick="show_MeusAnuncios()" class="pgSideBarText">
-              <img
-                src="./img/Icon-meusAnúncios@0.25x.png"
-                class="pgSideBarImg"
-              />Meus anúncios
-            </p>
-
-            <p class="pgSideBarText">
-              <img src="./img/Icon-chat@0.25x.png" class="pgSideBarImg" />Chat
-            </p>
+          <div class="pgPrincipalCardAnuncio">
+            <img id="videoAnuncio" src="./img/teste.png" class="videoAnuncio" />
+            <div id="descricao" class="descricao">
+              <p id="title" class="title">Fone de ouvido</p>
+              <p id="subtitle" class="subtitle">Estero, com fio de 1m</p>
+              <p id="preco" class="preco">R$ 16,00</p>
+            </div>
+            <img src="./img/whatsapp.png" class="imgWhatsapp" />
           </div>
         </div>
-
-        <div class="appBar">
-          <div class="topo">
-            <img
-              onclick="show_SideBar()"
-              src="./img/Sidebar.png"
-              class="btnSideBar"
-            />
-          </div>
-
-          <div class="filtrosBar">
-            <p class="regiao">Região</p>
-            <p class="anuncioBar">|</p>
-            <p class="categoria">Categoria</p>
-            <p class="anuncioBar">|</p>
-            <p class="filtros">Filtros</p>
-          </div>
-        </div>
-        <div onclick="close_SideBar()" class="anuncios" style="">
-          <!-- card de anuncio -->
-          <div class="cardAnuncio">
-            <img class="cardImg" src="./img/cadeira.png" />
-            <div class="cardTexto">
-              <p id="cardTitle" class="cardTitle">Cadeira de escritório</p>
-              <p id="cardPreco" class="cardPreco">R$ 120,00</p>
-              <p id="cardDetalhes" class="cardDetalhes">
-                10 de janeiro, São Paulo
-              </p>
-            </div>
-          </div>
-
-          <div class="cardAnuncio">
-            <img class="cardImg" src="./img/moto.png" />
-            <div class="cardTexto">
-              <p id="cardTitle" class="cardTitle">Twister 250, 2019</p>
-              <p id="cardPreco" class="cardPreco">R$ 18000,00</p>
-              <p id="cardDetalhes" class="cardDetalhes">
-                12 de janeiro, São Paulo
-              </p>
-            </div>
-          </div>
-
-          <div class="cardAnuncio">
-            <img class="cardImg" src="./img/pulseira.png" />
-            <div class="cardTexto">
-              <p id="cardTitle" class="cardTitle">Pulseiras coloridas</p>
-              <p id="cardPreco" class="cardPreco">R$ 5,00</p>
-              <p id="cardDetalhes" class="cardDetalhes">
-                15 de janeiro, São Paulo
-              </p>
-            </div>
-          </div>
+        <div class="menuBar">
+          <img src="./img/Home.png" class="imgMenu" />
+          <img
+            onclick="show_MeusAnuncios()"
+            src="./img/meusAnuncios.png"
+            class="imgMenu"
+          />
+          <img src="./img/Mais.png" class="imgMenu imgMais" />
+          <img src="./img/filtro.png" class="imgMenu" />
+          <img onclick="show_Login()" src="./img/user1.png" class="imgMenu" />
         </div>
       </div>
-      <!-- Fim Pagina de anuncios -->
+      <!-- Fim principal -->
 
       <!-- Ínicio Pagina inserir anuncios -->
       <div
@@ -481,7 +436,7 @@
     //INICIALIZAÇÃO DO APLICATIVO
 
     function login_Show() {
-      trocaTela("login");
+      trocaTela("geolocalizacao");
     }
 
     function onDeviceReady() {
@@ -505,7 +460,7 @@
       ajustaTelaPrincipal();
       ajustaAppBar();
 
-      currView = "login";
+      currView = "geolocalizacao";
       navigator.splashscreen.hide();
       app.style.display = "block";
 
@@ -623,9 +578,9 @@
 </html>
 
 <!--Adicionar aqui os scripts das páginas -->
+<script type="text/javascript" src="js/integra.js"></script>
 <script type="text/javascript" src="./buscar_geolocalizacao.js"></script>
 <script type="text/javascript" src="./login.js"></script>
 <script type="text/javascript" src="./cadastro.js"></script>
 <script type="text/javascript" src="./principal.js"></script>
 <script type="text/javascript" src="./inserirAnuncios.js"></script>
-<script type="text/javascript" src="./js/integra.js"></script>

@@ -3,5 +3,6 @@ function ShowCadastro() {
 }
 
 function ShowPrincipal() {
+  close_SideBar();
   trocaTela("principal");
 }
