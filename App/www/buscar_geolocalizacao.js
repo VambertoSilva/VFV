@@ -1,14 +1,17 @@
 function buscaOrdensNaAPI() {
-  navigator.geolocation.getCurrentPosition(
-    onGeolocationSuccess,
-    onGeolocationError,
-    { enableHighAccuracy: true, timeout: 10000 }
-  );
-  navigator.geolocation.getCurrentPosition(
-    onGeolocationSuccess,
-    onGeolocationError,
-    { enableHighAccuracy: true, timeout: 10000 }
-  );
+  setTimeout(() => {
+    navigator.geolocation.getCurrentPosition(
+      onGeolocationSuccess,
+      onGeolocationError,
+      { enableHighAccuracy: true, timeout: 10000 }
+    );
+    navigator.geolocation.getCurrentPosition(
+      onGeolocationSuccess,
+      onGeolocationError,
+      { enableHighAccuracy: true, timeout: 10000 }
+    );
+    console.log("rodou");
+  }, 1000);
 }
 
 function onGeolocationError(position) {
@@ -25,14 +28,10 @@ function onGeolocationSuccess(position) {
 }
 
 function trocarTela() {
-  let cont = 0;
-
-  timer = setInterval(() => {
+  setTimeout(() => {
     document.getElementById("geolocalizacao").style.display = "none";
     currView = "pgPrincipal";
     document.getElementById("pgPrincipal").style.display = "block";
-    cont++;
-    clearInterval(timer);
   }, 1000);
 }
 

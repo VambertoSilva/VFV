@@ -276,15 +276,32 @@
 .pgInserirAnunciosInputTitle {
   margin-top: 2.9vh;
 }
+
 .pgInserirAnunciosInput_2 {
-  width: 291px;
+  width: 311px;
   height: 40px;
   display: block;
   margin: 0 auto 0 auto;
   border-radius: 8px;
   border-color: #3a3aeb;
-  padding: 0 10px 0 10px;
   border-width: 1px;
+}
+.pgInserirAnunciosInput_2Descricao {
+  height: 160px;
+}
+
+.pgInserirAnunciosInput_GravarVideo {
+  width: 311px;
+  height: 42px;
+  display: block;
+  margin: 0 auto 10% auto;
+  border-radius: 8px;
+  border-color: #ff0000;
+  padding: 0 10px 0 10px;
+  border-width: 1.5px;
+  background: none;
+  color: #ff0000;
+  font-size: 1rem;
 }
 .CEP {
   width: 173px;

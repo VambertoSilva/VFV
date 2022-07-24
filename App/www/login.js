@@ -1,8 +1,7 @@
-function ShowCadastro() {
+function Showcadastro() {
   trocaTela("pagecadastro");
 }
 
 function ShowPrincipal() {
-  close_SideBar();
-  trocaTela("principal");
+  trocaTela("pgPrincipal");
 }

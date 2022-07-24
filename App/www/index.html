@@ -175,7 +175,7 @@
       <!--  Ínicio Pagina de Geolocalização -->
       <div
         id="geolocalizacao"
-        onloadstart="buscaOrdensNaAPI();"
+        onload="buscaOrdensNaAPI();"
         class="page"
         style="background-color: white; display: none"
       >
@@ -219,9 +219,7 @@
           Esqueceu a senha?
         </a>
 
-        <button onclick="ShowPrincipal()" id="btnLogin" class="loginEntrar">
-          Entrar
-        </button>
+        <button id="btnLogin" class="loginEntrar">Entrar</button>
         <button onclick="ShowCadastro()" class="seCadastrar">
           Se cadastrar
         </button>
@@ -293,7 +291,11 @@
             src="./img/meusAnuncios.png"
             class="imgMenu"
           />
-          <img src="./img/Mais.png" class="imgMenu imgMais" />
+          <img
+            onclick="show_InserirAnuncio()"
+            src="./img/Mais.png"
+            class="imgMenu imgMais"
+          />
           <img src="./img/filtro.png" class="imgMenu" />
           <img onclick="show_Login()" src="./img/user1.png" class="imgMenu" />
         </div>
@@ -315,14 +317,18 @@
           <p class="pgInserirAnunciosTitle">Inserir anúncio</p>
         </div>
         <div class="pgInserirAnunciosContainer">
-          <input class="pgInserirAnunciosImg" />
+          <button class="pgInserirAnunciosInput_GravarVideo">
+            Gravar Video
+          </button>
           <div>
             <p class="pgInserirAnunciosInputTitle">Título do anúncio</p>
             <input class="pgInserirAnunciosInput_2" />
           </div>
           <div>
             <p class="pgInserirAnunciosInputTitle">Descrição</p>
-            <input class="pgInserirAnunciosInput_2" />
+            <input
+              class="pgInserirAnunciosInput_2 pgInserirAnunciosInput_2Descricao"
+            />
           </div>
           <div>
             <p class="pgInserirAnunciosInputTitle">Categoria</p>
