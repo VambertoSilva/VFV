@@ -175,7 +175,7 @@
       <!--  Ínicio Pagina de Geolocalização -->
       <div
         id="geolocalizacao"
-        onload="buscaOrdensNaAPI();"
+        onload="show_principal()"
         class="page"
         style="background-color: white; display: none"
       >
@@ -183,11 +183,7 @@
         <p class="pgGeolocalizacao_Buscando" style="">
           Buscando geolocalização
         </p>
-        <button
-          onclick="buscaOrdensNaAPI()"
-          class="pgBtnSelecionarManualmente"
-          style=""
-        >
+        <button onclick="" class="pgBtnSelecionarManualmente" style="">
           Selecionar Manualmente
         </button>
       </div>
@@ -272,7 +268,7 @@
               <p id="subtitle" class="subtitle">Estero, com fio de 1m</p>
               <p id="preco" class="preco">R$ 16,00</p>
             </div>
-            <img src="./img/whatsapp.png" class="imgWhatsapp" />
+            <img src="./img/whatsapp.svg" class="imgWhatsapp" />
           </div>
           <div class="pgPrincipalCardAnuncio">
             <img id="videoAnuncio" src="./img/teste.png" class="videoAnuncio" />
@@ -281,23 +277,23 @@
               <p id="subtitle" class="subtitle">Estero, com fio de 1m</p>
               <p id="preco" class="preco">R$ 16,00</p>
             </div>
-            <img src="./img/whatsapp.png" class="imgWhatsapp" />
+            <img src="./img/whatsapp.svg" class="imgWhatsapp" />
           </div>
         </div>
         <div class="menuBar">
-          <img src="./img/Home.png" class="imgMenu" />
+          <img src="./img/Home.svg" class="imgMenu" />
           <img
             onclick="show_MeusAnuncios()"
-            src="./img/meusAnuncios.png"
+            src="./img/meusAnuncios.svg"
             class="imgMenu"
           />
           <img
             onclick="show_InserirAnuncio()"
-            src="./img/Mais.png"
+            src="./img/Mais.svg"
             class="imgMenu imgMais"
           />
-          <img src="./img/filtro.png" class="imgMenu" />
-          <img onclick="show_Login()" src="./img/user1.png" class="imgMenu" />
+          <img src="./img/filtro.svg" class="imgMenu" />
+          <img onclick="show_Login()" src="./img/user1.svg" class="imgMenu" />
         </div>
       </div>
       <!-- Fim principal -->
@@ -340,6 +336,21 @@
           </div>
 
           <button class="pgInserirAnunciosBtn">Publicar</button>
+        </div>
+        <div class="menuBar">
+          <img src="./img/Home.svg" class="imgMenu" />
+          <img
+            onclick="show_MeusAnuncios()"
+            src="./img/meusAnuncios.svg"
+            class="imgMenu"
+          />
+          <img
+            onclick="show_InserirAnuncio()"
+            src="./img/Mais.svg"
+            class="imgMenu imgMais"
+          />
+          <img src="./img/filtro.svg" class="imgMenu" />
+          <img onclick="show_Login()" src="./img/user1.svg" class="imgMenu" />
         </div>
       </div>
       <!-- Fim pagina inserir anuncios -->
@@ -391,6 +402,21 @@
               </p>
             </div>
           </div>
+        </div>
+        <div class="menuBar">
+          <img src="./img/Home.svg" class="imgMenu" />
+          <img
+            onclick="show_MeusAnuncios()"
+            src="./img/meusAnuncios.svg"
+            class="imgMenu"
+          />
+          <img
+            onclick="show_InserirAnuncio()"
+            src="./img/Mais.svg"
+            class="imgMenu imgMais"
+          />
+          <img src="./img/filtro.svg" class="imgMenu" />
+          <img onclick="show_Login()" src="./img/user1.svg" class="imgMenu" />
         </div>
       </div>
     </div>

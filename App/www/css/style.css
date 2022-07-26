@@ -2,6 +2,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter&family=Oswald&display=swap");
 
+@font-face {
+  font-family: Billie;
+  src: url(../fonts/BilLieDEMO-Medium.otf);
+}
 /* inicio pagina de geolocalização */
 
 .pgGeolocalizacaoImg {
@@ -175,6 +179,9 @@
   justify-content: center;
   gap: 10vw;
   align-items: center;
+  height: 35px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .imgMenu {
@@ -183,20 +190,20 @@
 }
 .imgMais {
   height: auto;
-  width: 12.9vw;
+  width: 12vw;
 }
 
 .imgWhatsapp {
   height: auto;
   width: 15vw;
   position: absolute;
-  bottom: 15vh;
+  bottom: 4vh;
   right: 8vw;
 }
 
 .pgPrincipalContainer {
   scroll-snap-type: y mandatory;
-  height: 90vh;
+  height: 94vh;
   width: 100vw;
   overflow-y: scroll;
 }
@@ -210,21 +217,27 @@
 .subtitle {
   font-size: 1.1rem;
   font-family: "Oswald", sans-serif;
+  text-shadow: 0.22px 0.22px rgb(24, 24, 24);
+  color: rgb(255, 255, 255);
 }
 
 .preco {
   font-size: 1.8rem;
   font-family: "Oswald", sans-serif;
+  text-shadow: 0.26px 0.26px rgb(24, 24, 24);
+  color: rgb(255, 255, 255);
 }
 
 .title {
-  font-size: 2rem;
-  font-family: "Oswald", sans-serif;
+  font-size: 1.8rem;
+  font-family: "Billie";
   line-height: 0.6;
+  text-shadow: 0.26px 0.26px rgb(24, 24, 24);
+  color: rgb(255, 255, 255);
 }
 .descricao {
   position: absolute;
-  bottom: 4vh;
+  bottom: 1.4vh;
   left: 8vw;
 }
 
@@ -261,6 +274,8 @@
 .pgInserirAnunciosContainer {
   margin: 15vh auto 0 auto;
   width: 311px;
+  height: 93vh;
+  overflow-y: scroll;
 }
 .pgInserirAnunciosImg {
   width: 291px;

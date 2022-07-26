@@ -1,29 +1,19 @@
-function buscaOrdensNaAPI() {
-  setTimeout(() => {
-    navigator.geolocation.getCurrentPosition(
-      onGeolocationSuccess,
-      onGeolocationError,
-      { enableHighAccuracy: true, timeout: 10000 }
-    );
-    navigator.geolocation.getCurrentPosition(
-      onGeolocationSuccess,
-      onGeolocationError,
-      { enableHighAccuracy: true, timeout: 10000 }
-    );
-    console.log("rodou");
-  }, 1000);
+function show_Principal() {
+  navigator.geolocation.getCurrentPosition(
+    onGeolocationSuccess,
+    onGeolocationError,
+    { enableHighAccuracy: true, timeout: 10000 }
+  );
 }
 
 function onGeolocationError(position) {
-  console.log("oi22");
   console.log(position);
-  alerta("ATENÇÃO !!!", "GPS desabilitado.", null);
+  trocarTela();
+  //alerta("ATENÇÃO !!!", "GPS desabilitado.", null);
 }
 
 function onGeolocationSuccess(position) {
   console.log(position);
-  console.log("oi");
-
   trocarTela();
 }
 
@@ -35,4 +25,4 @@ function trocarTela() {
   }, 1000);
 }
 
-buscaOrdensNaAPI();
+show_Principal();
