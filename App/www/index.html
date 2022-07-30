@@ -175,7 +175,6 @@
       <!--  Ínicio Pagina de Geolocalização -->
       <div
         id="geolocalizacao"
-        onload="show_principal()"
         class="page"
         style="background-color: white; display: none"
       >
@@ -211,12 +210,16 @@
           id="inputSenha"
           style=""
         />
-        <a class="esqueceuASenha" style="color: rgb(70, 70, 70)">
+        <a
+          onclick="show_EsqueceuASenha()"
+          class="esqueceuASenha"
+          style="color: rgb(70, 70, 70)"
+        >
           Esqueceu a senha?
         </a>
 
         <button id="btnLogin" class="loginEntrar">Entrar</button>
-        <button onclick="ShowCadastro()" class="seCadastrar">
+        <button onclick="show_Cadastro()" class="seCadastrar">
           Se cadastrar
         </button>
       </div>
@@ -255,10 +258,11 @@
           id="inputSenha"
         />
         <button class="btnSeCadastrar">Se cadastrar</button>
-        <button onclick="ShowLogin()" class="btnEntrar">Entrar</button>
+        <button onclick="show_Login()" class="btnEntrar">Entrar</button>
       </div>
       <!-- Fim pagina de cadastro -->
       <!-- Ínicio principal -->
+
       <div id="pgPrincipal" class="pgPrincipal page" style="display: none">
         <div class="pgPrincipalContainer">
           <div class="pgPrincipalCardAnuncio">
@@ -281,7 +285,11 @@
           </div>
         </div>
         <div class="menuBar">
-          <img src="./img/Home.svg" class="imgMenu" />
+          <img
+            onclick="show_Principal()"
+            src="./img/Home.svg"
+            class="imgMenu"
+          />
           <img
             onclick="show_MeusAnuncios()"
             src="./img/meusAnuncios.svg"
@@ -292,10 +300,15 @@
             src="./img/Mais.svg"
             class="imgMenu imgMais"
           />
-          <img src="./img/filtro.svg" class="imgMenu" />
+          <img
+            onclick="show_Filtros()"
+            src="./img/filtro.svg"
+            class="imgMenu"
+          />
           <img onclick="show_Login()" src="./img/user1.svg" class="imgMenu" />
         </div>
       </div>
+
       <!-- Fim principal -->
 
       <!-- Ínicio Pagina inserir anuncios -->
@@ -337,8 +350,13 @@
 
           <button class="pgInserirAnunciosBtn">Publicar</button>
         </div>
+
         <div class="menuBar">
-          <img src="./img/Home.svg" class="imgMenu" />
+          <img
+            onclick="show_Principal()"
+            src="./img/Home.svg"
+            class="imgMenu"
+          />
           <img
             onclick="show_MeusAnuncios()"
             src="./img/meusAnuncios.svg"
@@ -349,7 +367,11 @@
             src="./img/Mais.svg"
             class="imgMenu imgMais"
           />
-          <img src="./img/filtro.svg" class="imgMenu" />
+          <img
+            onclick="show_Filtros()"
+            src="./img/filtro.svg"
+            class="imgMenu"
+          />
           <img onclick="show_Login()" src="./img/user1.svg" class="imgMenu" />
         </div>
       </div>
@@ -404,7 +426,11 @@
           </div>
         </div>
         <div class="menuBar">
-          <img src="./img/Home.svg" class="imgMenu" />
+          <img
+            onclick="show_Principal()"
+            src="./img/Home.svg"
+            class="imgMenu"
+          />
           <img
             onclick="show_MeusAnuncios()"
             src="./img/meusAnuncios.svg"
@@ -415,12 +441,86 @@
             src="./img/Mais.svg"
             class="imgMenu imgMais"
           />
-          <img src="./img/filtro.svg" class="imgMenu" />
+          <img
+            onclick="show_Filtros()"
+            src="./img/filtro.svg"
+            class="imgMenu"
+          />
           <img onclick="show_Login()" src="./img/user1.svg" class="imgMenu" />
         </div>
       </div>
-    </div>
+      <!-- inicio filtros -->
+      <div id="pgFiltros" class="pgFiltros page" style="display: none">
+        <div class="pgInserirAnunciosAppBar">
+          <img
+            onclick="ShowPrincipal()"
+            class="pgInserirAnunciosSeta"
+            src="./img/seta.svg"
+          />
+          <p class="pgInserirAnunciosTitle">Filtros</p>
+        </div>
+        <p class="pgFiltrosTitle">Faixa de preço</p>
+        <div class="faixaDePrecoContainer">
+          <input placeholder="Min" class="pgFiltropreco" />
+          <div class="pgFiltroLine"></div>
+          <input placeholder="Max" class="pgFiltropreco" />
+        </div>
+        <div class="pgFiltroDivide"></div>
+        <p class="pgFiltroCategoria">Selecione a categoria</p>
+        <div class="menuBar">
+          <img
+            onclick="show_Principal()"
+            src="./img/Home.svg"
+            class="imgMenu"
+          />
+          <img
+            onclick="show_MeusAnuncios()"
+            src="./img/meusAnuncios.svg"
+            class="imgMenu"
+          />
+          <img
+            onclick="show_InserirAnuncio()"
+            src="./img/Mais.svg"
+            class="imgMenu imgMais"
+          />
+          <img
+            onclick="show_Filtros()"
+            src="./img/filtro.svg"
+            class="imgMenu"
+          />
+          <img onclick="show_Login()" src="./img/user1.svg" class="imgMenu" />
+        </div>
+      </div>
+      <!-- fim filtros -->
+      <!-- inicio esqueceu a senha-->
+      <div
+        id="pgEsqueceuASenha"
+        class="pgEsqueceuASenha page"
+        style="overflow-y: hidden; display: none"
+      >
+        <img src="./img/mail.svg" class="imgSenha" />
 
+        <input
+          class="pgLoginEmail"
+          type="email"
+          placeholder="Email"
+          id="inputEmail"
+          style=""
+        />
+        <input
+          class="pgLoginSenha"
+          placeholder=" Telefone"
+          id="inputTelefone"
+          style=""
+        />
+
+        <button id="pgEsqueceuASenhabtnEnviar" class="loginEntrar">
+          Enviar
+        </button>
+        <button onclick="show_Login()" class="seCadastrar">Voltar</button>
+      </div>
+      <!--  fim esqueceu a senha -->
+    </div>
     <!-- End App -->
   </body>
 
@@ -467,10 +567,11 @@
 
     //INICIALIZAÇÃO DO APLICATIVO
 
+    /*
     function login_Show() {
       trocaTela("geolocalizacao");
     }
-
+*/
     function onDeviceReady() {
       document.addEventListener("backbutton", onBackKeyDown, false);
       document.addEventListener("menubutton", onMenuKeyDown, false);
@@ -500,7 +601,7 @@
 
       //setInterval(hourCounterFuntion,60000)
 
-      login_Show();
+      buscarGeolocalizacaoShow();
     }
 
     window.onresize = function () {
@@ -616,3 +717,6 @@
 <script type="text/javascript" src="./cadastro.js"></script>
 <script type="text/javascript" src="./principal.js"></script>
 <script type="text/javascript" src="./inserirAnuncios.js"></script>
+<script type="text/javascript" src="./filtros.js"></script>
+<script type="text/javascript" src="./esqueceuASenha.js"></script>
+<script type="text/javascript" src="./meusAnuncios.js"></script>

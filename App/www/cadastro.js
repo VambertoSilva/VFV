@@ -1,3 +1,3 @@
-function ShowLogin() {
-  trocaTela("login");
+function show_Cadastro() {
+  trocaTela("pagecadastro");
 }

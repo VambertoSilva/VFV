@@ -1,4 +1,8 @@
-function show_Principal() {
+function buscarGeolocalizacaoShow() {
+  document.querySelector(".menuBar").style.display = "none";
+
+  //trocarTela("geolocalizaao");
+
   navigator.geolocation.getCurrentPosition(
     onGeolocationSuccess,
     onGeolocationError,
@@ -8,15 +12,15 @@ function show_Principal() {
 
 function onGeolocationError(position) {
   console.log(position);
-  trocarTela();
+  //trocarTela();
   //alerta("ATENÇÃO !!!", "GPS desabilitado.", null);
 }
 
 function onGeolocationSuccess(position) {
   console.log(position);
-  trocarTela();
+  show_Principal();
 }
-
+/*
 function trocarTela() {
   setTimeout(() => {
     document.getElementById("geolocalizacao").style.display = "none";
@@ -24,5 +28,4 @@ function trocarTela() {
     document.getElementById("pgPrincipal").style.display = "block";
   }, 1000);
 }
-
-show_Principal();
+*/

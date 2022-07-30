@@ -1,7 +1,5 @@
-function show_MeusAnuncios() {
-  trocaTela("pgMeusAnuncios");
-}
+function show_Principal() {
+  document.querySelector(".menuBar").style.display = "block";
 
-function show_Login() {
-  trocaTela("login");
+  trocaTela("pgPrincipal");
 }
